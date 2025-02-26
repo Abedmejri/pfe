@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200;
+  }
+  
+  .btn-block {
+    @apply w-full;
+  }
+  
+  .btn-add {
+    @apply px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200;
+  }
+  
+  .btn-edit {
+    @apply px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200;
+  }
+  
+  .btn-delete {
+    @apply px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200;
+  }
+
+  .form input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent;
+  }
+
+  .alert {
+    @apply p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg;
+  }
+
+  .notification {
+    @apply fixed bottom-4 right-4 px-4 py-2 bg-green-600 text-white rounded-lg shadow-lg;
+  }
+
+  .animated {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .fadeInDown {
+    @apply transform translate-y-0 opacity-100;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-md;
+  }
+
+  .login-signup-form {
+    @apply min-h-screen flex items-center justify-center bg-gray-50;
+  }
+
+  .login-signup-form .form {
+    @apply bg-white p-8 rounded-lg shadow-md w-full max-w-md;
+  }
+
+  .login-signup-form .title {
+    @apply text-2xl font-bold text-center text-gray-800 mb-6;
+  }
+
+  .login-signup-form .message {
+    @apply text-center mt-4 text-gray-600;
+  }
+
+  .login-signup-form .message a {
+    @apply text-indigo-600 hover:text-indigo-500;
+  }
+
+  table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  thead {
+    @apply bg-gray-50;
+  }
+
+  th {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  tbody {
+    @apply bg-white divide-y divide-gray-200;
+  }
+
+  td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
+  }
+}
