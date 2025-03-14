@@ -16,7 +16,7 @@ class MeetingController extends Controller {
             'date' => 'required|date',
             'time' => 'required',
             'location' => 'required',
-            'commission_id' => 'required|exists:commissions,id', // Make sure the commission_id exists in the commissions table
+            'commission_id' => 'required|exists:commissions,id',  // Make sure the commission_id exists in the commissions table
             'attendees' => 'required|integer',
         ]);
 

@@ -3,17 +3,18 @@ import { useStateContext } from "./context/ContextProvider.jsx";
 import Dashboard from "./Dashboard.jsx";
 import DefaultLayout from "./components/DefaultLayout";
 import GuestLayout from "./components/GuestLayout";
-import Login from "./views/Login";
+import Login from "./views/auth/Login.jsx";
 import NotFound from "./views/NotFound";
-import Signup from "./views/Signup";
-import Users from "./views/Users";
-import UserForm from "./views/UserForm";
-import Commissions from "./views/Commissions";  
-import Meetings from "./views/Meetings";        
-import PV from "./views/PV";     
-import Chat from "./views/Chat.jsx";
+import Signup from "./views/auth/Signup";
+import Users from "./views/Users/Users";
+import UserForm from "./views/Users/UserForm";
+import Commissions from "./views/Commissions/Commissions";  
+import Meetings from "./views/Meetings/Meetings";        
+import PV from "./views/PV/PV.jsx";     
+import Chat from "./views/Chat/Chat.jsx";
+import Profile from "./views/User/profile.jsx";
 
-import UserDashboard from "./User/UserDashboard.jsx";
+import UserDashboard from "./views/User/UserDashboard.jsx";
 
 
 // Protect routes based on role
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/commissions',
         element: <Commissions />  
+      },
+      {
+        path: '/prf',
+        element: <Profile />  
       },
       
       {

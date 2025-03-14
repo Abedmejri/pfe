@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Card, Col, Row } from 'antd';
 import { Users, Calendar, FileText } from 'lucide-react';
-import axiosClient from './axios-client'; 
+import axiosClient from './axios-client';
 
 export default function Dashboard() {
   const [stats, setStats] = useState({
@@ -30,44 +31,46 @@ export default function Dashboard() {
       value: stats.total_commissions,
       icon: Users,
       change: "+2 this month",
-      color: "bg-blue-500"
+      color: "#1890ff"
     },
     {
       title: "Upcoming Meetings",
       value: stats.upcoming_meetings,
       icon: Calendar,
       change: `Next: ${stats.next_meeting}`,
-      color: "bg-green-500"
+      color: "#52c41a"
     },
     {
       title: "Recent Minutes",
       value: stats.recent_minutes,
       icon: FileText,
       change: `Last added: ${stats.last_added_minutes}`,
-      color: "bg-purple-500"
+      color: "#722ed1"
     }
   ];
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="dashboard-container" style={{ padding: '20px' }}>
+      <h1 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '20px' }}>Dashboard</h1>
+
+      <Row gutter={16}>
         {statCards.map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg shadow p-6">
-            <div className="flex items-center justify-between">
+          <Col span={8} key={index}>
+            <Card
+              title={stat.title}
+              bordered={false}
+              extra={<stat.icon className="icon" style={{ color: stat.color, fontSize: '24px' }} />}
+              bodyStyle={{ padding: '20px' }}
+              style={{ borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}
+            >
               <div>
-                <p className="text-sm text-gray-600">{stat.title}</p>
-                <p className="text-2xl font-semibold mt-1">{stat.value}</p>
+                <p style={{ fontSize: '20px', fontWeight: '600' }}>{stat.value}</p>
+                <p style={{ color: '#8c8c8c' }}>{stat.change}</p>
               </div>
-              <div className={`${stat.color} p-3 rounded-full`}>
-                <stat.icon className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 mt-2">{stat.change}</p>
-          </div>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 }

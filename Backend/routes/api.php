@@ -48,6 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/chat', [ChatController::class, 'getChats']);
     Route::post('/chat', [ChatController::class, 'store']);
     Route::get('/chat/download', [ChatController::class, 'downloadChatLog']);
+    
 
 
     Route::middleware(['auth:sanctum', 'admin'])->group(function () {

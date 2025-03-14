@@ -17,5 +17,7 @@ class Meeting extends Model {
     public function commission()
     {
         return $this->belongsTo(Commission::class);
+        
     }
+    
 }
